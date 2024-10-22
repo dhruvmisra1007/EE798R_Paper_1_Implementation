@@ -34,6 +34,7 @@ python scripts/face_detection.py --indexes 0 --text "A headshot of a woman looki
 The above script will produce 20 images from which one can get the top k images based on face recognition models.
 
 python scripts/face_top_k.py --folder ./test_face/text_type_4/ --img_index 0 --img_saved 20 --top_k 5
+
 python scripts/face_top_k.py --folder ./test_face/text_type_11/ --img_index 0 --img_saved 20 --top_k 5
 
 # Segmentation
@@ -71,8 +72,11 @@ python scripts/style_transfer.py --indexes 0 --text "A fantasy photo of volcanoe
 # ImageNet Diffusion
 
 Until now, we were using the stable diffusion model; now onwards, we use the unconditional diffusion model from OpenAI.
+
 Therefore, we first run the following commands:
+
 cd ..
+
 cd D:\Courses\7th sem courses\EE798R\End-Term Project\Code Implementation\Universal-Guided-Diffusion\Guided_Diffusion_Imagenet
 
 python Guided/Clip_guided.py --trials 5 --samples_per_diffusion 2 --text "English foxhound by Edward Hopper" --optim_forward_guidance --optim_forward_guidance_wt 2.0 --optim_num_steps 10 --optim_folder ./Clip_btd_cake/ --batch_size 8 --attention_resolutions 32,16,8 --class_cond False --diffusion_steps 1000 --image_size 256 --learn_sigma True --noise_schedule linear --num_channels 256 --num_head_channels 64 --num_res_blocks 2 --resblock_updown True --use_fp16 False --use_scale_shift_norm True --model_path <Path to the unconditional diffusion model>
